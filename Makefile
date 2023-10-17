@@ -22,11 +22,9 @@ all: ${NAME}
 ${NAME}: ${MANDATORY_OBJS}
 	ar rc ${NAME} ${MANDATORY_OBJS}
 	ranlib ${NAME}
-	#rm -f ${MANDATORY_OBJS}
 
 bonus: ${BONUS_OBJS} ${MANDATORY_OBJS}
 	ar rc ${NAME} ${BONUS_OBJS} ${MANDATORY_OBJS}
-	#rm -f ${MANDATORY_OBJS} ${BONUS_OBJS}
 
 %.o: %.c ${HEADER}
 	cc -Wall -Wextra -Werror -c $< -o $@
